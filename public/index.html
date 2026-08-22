@@ -175,7 +175,7 @@
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-primary" href="#start">Book a free call</a>
+      <a class="btn btn-primary" href="#start" data-book>Book a free call</a>
     </div>
     <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -187,7 +187,7 @@
     <a href="#process">Process</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
-    <a class="btn btn-primary" href="#start">Book a free call</a>
+    <a class="btn btn-primary" href="#start" data-book>Book a free call</a>
   </div>
 </header>
 
@@ -208,7 +208,7 @@
         appointment book, your staff and your prices. We handle the rest.
       </p>
       <div class="hero-actions reveal">
-        <a class="btn btn-primary btn-lg" href="#start">Book a free call</a>
+        <a class="btn btn-primary btn-lg" href="#start" data-book>Book a free call</a>
         <a class="btn btn-outline btn-lg" href="#included">See what's included</a>
       </div>
       <ul class="hero-ticks reveal" role="list">
@@ -676,18 +676,18 @@
   <div class="wrap">
     <div class="sec-head center">
       <p class="kicker">Pricing</p>
-      <h2>One build fee. One monthly price.</h2>
+      <h2>No build fee. Just one monthly price.</h2>
       <p class="sec-sub">
-        Every plan includes hosting, SSL, your domain, security updates, and content changes.
-        No per-booking fees and no surprise renewal bills.
+        We design and build your site at no upfront cost. The monthly covers hosting, SSL,
+        your domain, security updates and content changes — no setup fee, no per-booking fee,
+        and no surprise renewal bills.
       </p>
     </div>
 
     <div class="plans">
       <article class="plan reveal">
         <h3>Presence</h3>
-        <p class="plan-price"><span>$</span>79<em>/mo</em></p>
-        <p class="plan-setup">+ $600 to design &amp; build</p>
+        <p class="plan-price"><span>$</span>69<sup>.99</sup><em>/mo</em></p>
         <p class="plan-for">A beautiful site that tells people who you are and brings the calls in.</p>
         <ul role="list">
           <li>Custom-designed website</li>
@@ -696,14 +696,13 @@
           <li>Hosting, SSL &amp; updates</li>
           <li>Content changes included</li>
         </ul>
-        <a class="btn btn-outline full" href="#start">Book a free call</a>
+        <a class="btn btn-outline full" href="#start" data-book>Book a free call</a>
       </article>
 
       <article class="plan featured reveal">
         <span class="plan-tag">Most popular</span>
         <h3>Bookings</h3>
         <p class="plan-price"><span>$</span>149<em>/mo</em></p>
-        <p class="plan-setup">+ $1,200 to design &amp; build</p>
         <p class="plan-for">For shops whose day runs on the appointment book.</p>
         <ul role="list">
           <li>Everything in Presence</li>
@@ -713,7 +712,7 @@
           <li>Owner &amp; manager dashboard</li>
           <li>Priority support</li>
         </ul>
-        <a class="btn btn-primary full" href="#start">Book a free call</a>
+        <a class="btn btn-primary full" href="#start" data-book>Book a free call</a>
       </article>
 
       <article class="plan reveal">
@@ -728,7 +727,7 @@
           <li>Custom features &amp; integrations</li>
           <li>Dedicated support</li>
         </ul>
-        <a class="btn btn-outline full" href="#start">Talk to us</a>
+        <a class="btn btn-outline full" href="#start" data-book>Talk to us</a>
       </article>
     </div>
   </div>
@@ -805,7 +804,7 @@
       what we'd build and what it would cost — no pitch, no commitment.
     </p>
     <div class="cta-actions">
-      <a class="btn btn-cta btn-lg" href="mailto:hello@gettablecloth.com?subject=Free%20call%20about%20a%20website">Book a free call</a>
+      <a class="btn btn-cta btn-lg" href="mailto:hello@gettablecloth.com?subject=Free%20call%20about%20a%20website" data-book>Book a free call</a>
       <a class="btn btn-cta-ghost btn-lg" href="#included">See what's included</a>
     </div>
     <p class="cta-fine">Based in Portland, Oregon — happy to meet in person locally.</p>
@@ -843,6 +842,72 @@
   </div>
 </footer>
 
+<!-- ====================== BOOKING MODAL ======================
+     Consultation calls are booked through Tablecloth itself - the same
+     booking engine, availability rules and dashboard every client site
+     uses - rather than an embedded third-party scheduler. -->
+<div class="bk-backdrop" id="bkModal" hidden>
+  <div class="bk-dialog" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+    <button class="bk-close" id="bkClose" aria-label="Close">&times;</button>
+
+    <div class="bk-head">
+      <p class="kicker">Free consultation</p>
+      <h2 id="bkTitle">Book a 20-minute call</h2>
+      <p class="bk-sub">Pick a time that suits you. You'll get a Google&nbsp;Meet link — no software to install.</p>
+    </div>
+
+    <div class="bk-body" id="bkBody">
+      <!-- step 1: date + time -->
+      <section class="bk-step" data-step="when">
+        <div class="bk-dates" id="bkDates"></div>
+        <p class="bk-tzline" id="bkTzLine"></p>
+        <div class="bk-slots" id="bkSlots"></div>
+      </section>
+
+      <!-- step 2: details -->
+      <section class="bk-step" data-step="who" hidden>
+        <button class="bk-back" id="bkBack" type="button">&larr; Change time</button>
+        <p class="bk-chosen" id="bkChosen"></p>
+        <form class="bk-form" id="bkForm" novalidate>
+          <label>Your name <span aria-hidden="true">*</span>
+            <input name="customerName" required autocomplete="name" />
+          </label>
+          <label>Email <span aria-hidden="true">*</span>
+            <input name="customerEmail" type="email" required autocomplete="email" />
+            <em>We'll send the Meet link here.</em>
+          </label>
+          <label>Business name
+            <input name="business" autocomplete="organization" />
+          </label>
+          <label>Anything useful to know?
+            <textarea name="notes" rows="2" placeholder="What you have today, what you're hoping for…"></textarea>
+          </label>
+          <!-- honeypot: bots fill it, humans never see it -->
+          <input class="bk-hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <p class="bk-error" id="bkError" hidden></p>
+          <button class="btn btn-primary full" type="submit" id="bkSubmit">Confirm booking</button>
+        </form>
+      </section>
+
+      <!-- step 3: confirmed -->
+      <section class="bk-step bk-done" data-step="done" hidden>
+        <span class="bk-tick" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </span>
+        <h3>You're booked.</h3>
+        <p class="bk-done-when" id="bkDoneWhen"></p>
+        <div id="bkMeetWrap" hidden>
+          <a class="btn btn-primary" id="bkMeetLink" href="#" target="_blank" rel="noopener">Join the Google Meet</a>
+          <p class="bk-done-note">The link is in your calendar invite too.</p>
+        </div>
+        <p class="bk-done-note" id="bkNoMeet" hidden>We'll email you the meeting link shortly.</p>
+        <button class="btn btn-outline" id="bkDoneClose" type="button">Close</button>
+      </section>
+    </div>
+  </div>
+</div>
+
 <script src="/app.js" defer></script>
+<script src="/booking.js" defer></script>
 </body>
 </html>
