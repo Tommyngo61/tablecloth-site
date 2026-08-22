@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Tablecloth — All-in-One Business Platform: Website, Booking, Payments &amp; Domains</title>
+<meta name="description" content="Tablecloth is an all-in-one business platform that combines a website builder, appointment scheduling, card payments, domain registration, and hosting in one system. Run your whole business from a single dashboard." />
+<link rel="canonical" href="https://gettablecloth.com/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#1E6B4E" />
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Tablecloth" />
+<meta property="og:title" content="Tablecloth — All-in-One Business Platform" />
+<meta property="og:description" content="Website, online booking, card payments, domains, and hosting in one platform. Everything a small business needs to get online and take appointments." />
+<meta property="og:url" content="https://gettablecloth.com/" />
+<!-- TODO: og:image needs a real 1200x630 PNG or JPG. Facebook and X do not
+     render SVG previews, so the artwork in /og-image.svg has to be exported
+     to og-image.png before these two lines are uncommented - pointing at a
+     file that doesn't exist (or an SVG) shows a broken/blank social card,
+     which is worse than no image tag at all.
+<meta property="og:image" content="https://gettablecloth.com/og-image.png" />
+<meta name="twitter:image" content="https://gettablecloth.com/og-image.png" />
+-->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Tablecloth — All-in-One Business Platform" />
+<meta name="twitter:description" content="Website, online booking, card payments, domains, and hosting in one platform." />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+
+<!-- Opt IN to scroll animations, rather than hiding content by default and
+     relying on JS to bring it back. If this script never runs, or the browser
+     has no IntersectionObserver, or the visitor asked for reduced motion, the
+     `.reveal` rules never apply and the page just renders normally. Inline and
+     before first paint so there's no flash of visible-then-hidden content. -->
+<script>
+  (function () {
+    try {
+      if ("IntersectionObserver" in window &&
+          !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("js-anim");
+      }
+    } catch (e) { /* leave content visible */ }
+  })();
+</script>
+
+<!-- Structured data. Search engines and AI assistants read these directly, so
+     the claims here are kept factual and identical to the visible copy. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Tablecloth",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://gettablecloth.com/",
+  "description": "Tablecloth is an all-in-one business platform that combines a website builder, appointment scheduling, card payments, domain registration, and hosting in a single system.",
+  "featureList": [
+    "Website builder and content management system",
+    "Online appointment scheduling and booking",
+    "Card payment processing",
+    "Domain registration and DNS management",
+    "Managed hosting and automatic deployment",
+    "Staff scheduling and role-based access"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "49",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an all-in-one business platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An all-in-one business platform is a single system that handles every digital part of running a business — the website, online bookings, payments, the domain name, and hosting — instead of stitching together separate tools for each. Tablecloth is an all-in-one business platform built for service businesses like salons, restaurants, clinics, and food carts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Tablecloth different from Wix or Squarespace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wix and Squarespace are primarily website builders that add booking and payments through paid apps or higher tiers. Tablecloth treats scheduling, payments, staff management, and deployment as core parts of the platform rather than add-ons, so bookings, staff schedules, and your published site all read from the same database with no syncing or plugins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I take appointments and payments on my own domain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tablecloth registers your domain, points it at your site automatically, provisions HTTPS, and serves the booking and checkout flow on your own domain. Customers never get redirected to a third-party booking subdomain."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do my staff get their own logins?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tablecloth has role-based access built in. Owners see everything, managers run the schedule and the team, and technicians see only their own appointments. Each role sees a dashboard scoped to what they actually do."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know how to code to use Tablecloth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Business owners edit their site, services, prices, hours, and photos from a visual dashboard, and publishing updates the live site immediately. Developers who want lower-level control get Git-connected deploys and full code access on the same platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kinds of businesses is Tablecloth built for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tablecloth is built for appointment-based and order-based local businesses: nail and hair salons, spas, barbershops, clinics, restaurants, cafes, and food carts. Templates cover service menus with durations and add-ons, food menus with online ordering, and retail catalogs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I move my existing website over to Tablecloth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tablecloth can rebuild an existing site on a modern template while keeping your branding, then transfer or re-point your current domain so there is no downtime and no lost search ranking."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Tablecloth home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Tablecloth</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#platform">Platform</a>
+      <a href="#features">Features</a>
+      <a href="#compare">Compare</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost nav-signin" href="#pricing">Sign in</a>
+      <a class="btn btn-primary" href="#start">Get started</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#platform">Platform</a>
+    <a href="#features">Features</a>
+    <a href="#compare">Compare</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn-primary" href="#start">Get started</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="pill reveal"><span class="pill-dot"></span> One platform. Not six subscriptions.</p>
+      <h1 class="reveal">Everything your business needs to run online, in&nbsp;one&nbsp;place.</h1>
+      <p class="lede reveal">
+        Tablecloth is an all-in-one business platform that combines a
+        <strong>website builder</strong>, <strong>appointment scheduling</strong>,
+        <strong>card payments</strong>, <strong>domain registration</strong>, and
+        <strong>managed hosting</strong> in a single system — so your site, your calendar,
+        and your checkout are never out of sync.
+      </p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary btn-lg" href="#start">Get started free</a>
+        <a class="btn btn-outline btn-lg" href="#platform">See how it works</a>
+      </div>
+      <ul class="hero-ticks reveal" role="list">
+        <li>No plugins to buy</li>
+        <li>Your own domain</li>
+        <li>Live in a day</li>
+      </ul>
+    </div>
+
+    <!-- Product visual: pure CSS/SVG so it stays crisp at any size and costs
+         no image bytes. -->
+    <div class="hero-visual reveal" aria-hidden="true">
+      <div class="browser float-slow">
+        <div class="browser-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="browser-url">yoursalon.com</span>
+        </div>
+        <div class="browser-body">
+          <div class="bb-hero"></div>
+          <div class="bb-row"><span class="bb-line w70"></span><span class="bb-price"></span></div>
+          <div class="bb-row"><span class="bb-line w50"></span><span class="bb-price"></span></div>
+          <div class="bb-row"><span class="bb-line w60"></span><span class="bb-price"></span></div>
+          <div class="bb-grid">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chip chip-booking float-a">
+        <div class="chip-head">
+          <span class="chip-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+          </span>
+          <span>New booking</span>
+        </div>
+        <div class="chip-body">
+          <strong>Signature Manicure</strong>
+          <span>Today · 2:30 PM · Kim</span>
+        </div>
+      </div>
+
+      <div class="chip chip-pay float-b">
+        <div class="chip-head">
+          <span class="chip-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          </span>
+          <span>Payment</span>
+        </div>
+        <div class="chip-amount">$68.00 <em>paid</em></div>
+      </div>
+
+      <div class="chip chip-domain float-c">
+        <span class="chip-ic sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>
+        </span>
+        <span>DNS live · SSL active</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LOGO / PROOF STRIP ======================= -->
+<section class="strip">
+  <div class="wrap">
+    <p class="strip-label">Built for the businesses that run on appointments and orders</p>
+    <ul class="strip-list" role="list">
+      <li>Nail &amp; hair salons</li>
+      <li>Barbershops</li>
+      <li>Spas &amp; clinics</li>
+      <li>Restaurants &amp; cafés</li>
+      <li>Food carts</li>
+      <li>Studios</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========================= THE PROBLEM ========================= -->
+<section class="section platform" id="platform">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">The problem</p>
+      <h2>Most businesses are duct-taping six tools together.</h2>
+      <p class="sec-sub">
+        A website builder here, a booking app there, a payment processor, a registrar,
+        a host, a spreadsheet for staff hours. Every one is a separate bill, a separate
+        login, and a separate place for your information to go stale.
+      </p>
+    </div>
+
+    <div class="swap">
+      <div class="swap-side scattered">
+        <span class="tool t1">Website builder</span>
+        <span class="tool t2">Booking app</span>
+        <span class="tool t3">Payments</span>
+        <span class="tool t4">Domain registrar</span>
+        <span class="tool t5">Web host</span>
+        <span class="tool t6">Staff spreadsheet</span>
+        <p class="swap-cap">Six bills. Six logins. Nothing talks.</p>
+      </div>
+
+      <div class="swap-arrow" aria-hidden="true">
+        <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 12h42M34 3l10 9-10 9"/>
+        </svg>
+      </div>
+
+      <div class="swap-side unified">
+        <div class="unified-card">
+          <span class="brand-mark lg" aria-hidden="true"></span>
+          <strong>Tablecloth</strong>
+          <ul role="list">
+            <li>Website &amp; CMS</li>
+            <li>Scheduling</li>
+            <li>Payments</li>
+            <li>Domains</li>
+            <li>Hosting &amp; deploys</li>
+            <li>Team &amp; roles</li>
+          </ul>
+        </div>
+        <p class="swap-cap">One bill. One login. One source of truth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== FEATURES ========================== -->
+<section class="section features" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">The platform</p>
+      <h2>Six products. One system.</h2>
+      <p class="sec-sub">
+        Each piece works on its own — and works better because they share one database.
+        Change a price once and it updates the website, the booking flow, and the receipt.
+      </p>
+    </div>
+
+    <div class="feat-grid">
+      <article class="feat reveal">
+        <span class="feat-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01"/></svg>
+        </span>
+        <h3>Website &amp; content</h3>
+        <p>
+          Launch a fast, mobile-first site from a template built for your industry, then edit
+          every word, price, and photo yourself. <strong>Publishing updates the live site
+          instantly</strong> — no rebuild, no developer, no waiting.
+        </p>
+        <ul role="list">
+          <li>Industry templates</li>
+          <li>Visual editor</li>
+          <li>Photo galleries</li>
+          <li>SEO controls</li>
+        </ul>
+      </article>
+
+      <article class="feat reveal">
+        <span class="feat-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M8 14h3M8 17.5h6"/></svg>
+        </span>
+        <h3>Appointment scheduling</h3>
+        <p>
+          Real online booking with per-service durations, add-ons that extend the appointment,
+          per-staff availability, and <strong>double-booking made physically impossible</strong>
+          at the database level — not just checked in the app.
+        </p>
+        <ul role="list">
+          <li>Live availability</li>
+          <li>Service add-ons</li>
+          <li>Day / week / month views</li>
+          <li>Reschedule &amp; cancel</li>
+        </ul>
+      </article>
+
+      <article class="feat reveal">
+        <span class="feat-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+        </span>
+        <h3>Payments &amp; orders</h3>
+        <p>
+          Take card payments online or let customers pay at pickup. Online ordering with
+          modifiers, quantities, and live totals — and the entire checkout stays on
+          <strong>your own domain</strong>, never a third-party page.
+        </p>
+        <ul role="list">
+          <li>Card checkout</li>
+          <li>Pay-at-pickup</li>
+          <li>Order dashboard</li>
+          <li>Itemized history</li>
+        </ul>
+      </article>
+
+      <article class="feat reveal">
+        <span class="feat-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>
+        </span>
+        <h3>Domains &amp; DNS</h3>
+        <p>
+          Search and register your domain from inside the dashboard. Tablecloth points the
+          DNS at your site and <strong>provisions HTTPS automatically</strong>. No registrar
+          account, no nameserver forms, no certificate renewals to forget.
+        </p>
+        <ul role="list">
+          <li>Domain search</li>
+          <li>One-click register</li>
+          <li>Automatic DNS</li>
+          <li>Free SSL</li>
+        </ul>
+      </article>
+
+      <article class="feat reveal">
+        <span class="feat-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 18l-5-6 5-6M16 6l5 6-5 6M13.5 4l-3 16"/></svg>
+        </span>
+        <h3>Hosting &amp; deploys</h3>
+        <p>
+          Every site runs on autoscaling cloud infrastructure that costs nothing while idle.
+          Connect a Git repository and <strong>every push deploys automatically</strong>, with
+          full build logs and one-click rollback.
+        </p>
+        <ul role="list">
+          <li>Autoscaling hosting</li>
+          <li>Git-connected deploys</li>
+          <li>Build logs</li>
+          <li>Instant rollback</li>
+        </ul>
+      </article>
+
+      <article class="feat reveal">
+        <span class="feat-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M17 8.5a3 3 0 1 0 0-5M18 20c0-2.2-.8-4.2-2.2-5.7"/></svg>
+        </span>
+        <h3>Team &amp; permissions</h3>
+        <p>
+          Give every employee their own login. Owners see the whole business, managers run the
+          schedule and the team, and staff see <strong>only their own appointments</strong>.
+          Roles are enforced by the server, not hidden in the interface.
+        </p>
+        <ul role="list">
+          <li>Role-based access</li>
+          <li>Staff schedules</li>
+          <li>Per-tech calendars</li>
+          <li>Instant revoke</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= HOW IT WORKS ========================= -->
+<section class="section how">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">How it works</p>
+      <h2>From nothing to taking bookings, in three steps.</h2>
+    </div>
+    <ol class="steps" role="list">
+      <li class="step reveal">
+        <span class="step-n">1</span>
+        <h3>Pick your template</h3>
+        <p>Choose the shape that matches your business — a service menu with durations, a food menu with ordering, or a retail catalog. Your dashboard configures itself to match.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">2</span>
+        <h3>Add your details</h3>
+        <p>Enter your services, prices, hours, staff, and photos once. Tablecloth turns that into your live website, your bookable calendar, and your checkout at the same time.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-n">3</span>
+        <h3>Claim your domain</h3>
+        <p>Search for a domain, register it in a click, and Tablecloth handles DNS and HTTPS. Your site is live, on your own name, taking real appointments.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- =========================== COMPARE =========================== -->
+<section class="section compare" id="compare">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">Comparison</p>
+      <h2>How is Tablecloth different from Wix or Squarespace?</h2>
+      <p class="sec-sub">
+        Traditional website builders start as page editors and bolt on booking and payments
+        through paid apps or higher tiers. Tablecloth was built the other way around — the
+        schedule and the checkout are the core, and the website reads from them.
+      </p>
+    </div>
+
+    <div class="table-scroll">
+      <table class="cmp">
+        <caption class="sr-only">Feature comparison between Tablecloth and traditional website builders</caption>
+        <thead>
+          <tr>
+            <th scope="col">Capability</th>
+            <th scope="col" class="cmp-us">Tablecloth</th>
+            <th scope="col">Typical website builder</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Website &amp; content editor</th><td class="cmp-us"><span class="yes">Included</span></td><td><span class="yes">Included</span></td></tr>
+          <tr><th scope="row">Appointment scheduling</th><td class="cmp-us"><span class="yes">Core feature</span></td><td><span class="mid">Paid app or upper tier</span></td></tr>
+          <tr><th scope="row">Staff logins &amp; roles</th><td class="cmp-us"><span class="yes">Built in</span></td><td><span class="mid">Limited or extra</span></td></tr>
+          <tr><th scope="row">Checkout on your own domain</th><td class="cmp-us"><span class="yes">Always</span></td><td><span class="mid">Often redirects</span></td></tr>
+          <tr><th scope="row">Domain registration &amp; DNS</th><td class="cmp-us"><span class="yes">In dashboard</span></td><td><span class="yes">Included</span></td></tr>
+          <tr><th scope="row">Git-connected deploys</th><td class="cmp-us"><span class="yes">Included</span></td><td><span class="no">Not available</span></td></tr>
+          <tr><th scope="row">Full code access</th><td class="cmp-us"><span class="yes">Yes</span></td><td><span class="no">Locked platform</span></td></tr>
+          <tr><th scope="row">One bill for everything</th><td class="cmp-us"><span class="yes">Yes</span></td><td><span class="no">Stacked add-ons</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cmp-note">
+      Comparison reflects how these capabilities are typically packaged. Specific plans and
+      pricing at other providers change often — check their current tiers before deciding.
+    </p>
+  </div>
+</section>
+
+<!-- =========================== PRICING =========================== -->
+<section class="section pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">Pricing</p>
+      <h2>One subscription instead of six.</h2>
+      <p class="sec-sub">Every plan includes hosting, SSL, and unlimited content edits. No per-booking fees.</p>
+    </div>
+
+    <div class="plans">
+      <article class="plan reveal">
+        <h3>Starter</h3>
+        <p class="plan-price"><span>$</span>29<em>/mo</em></p>
+        <p class="plan-for">For a single location getting online.</p>
+        <ul role="list">
+          <li>Website &amp; content editor</li>
+          <li>Online booking</li>
+          <li>Up to 3 staff logins</li>
+          <li>Managed hosting &amp; SSL</li>
+          <li>Email support</li>
+        </ul>
+        <a class="btn btn-outline full" href="#start">Start free</a>
+      </article>
+
+      <article class="plan featured reveal">
+        <span class="plan-tag">Most popular</span>
+        <h3>Professional</h3>
+        <p class="plan-price"><span>$</span>49<em>/mo</em></p>
+        <p class="plan-for">For busy shops taking bookings and payments daily.</p>
+        <ul role="list">
+          <li>Everything in Starter</li>
+          <li>Card payments &amp; online ordering</li>
+          <li>Unlimited staff logins</li>
+          <li>Service add-ons &amp; durations</li>
+          <li>Domain registration included</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-primary full" href="#start">Start free</a>
+      </article>
+
+      <article class="plan reveal">
+        <h3>Studio</h3>
+        <p class="plan-price">Custom</p>
+        <p class="plan-for">For agencies and multi-location operators.</p>
+        <ul role="list">
+          <li>Everything in Professional</li>
+          <li>Multiple sites, one dashboard</li>
+          <li>Git-connected deploys</li>
+          <li>Developer &amp; client roles</li>
+          <li>White-label options</li>
+        </ul>
+        <a class="btn btn-outline full" href="#start">Talk to us</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FAQ ============================= -->
+<section class="section faq" id="faq">
+  <div class="wrap narrow">
+    <div class="sec-head center">
+      <p class="kicker">Questions</p>
+      <h2>Frequently asked questions</h2>
+    </div>
+
+    <div class="acc" id="acc">
+      <details class="acc-item">
+        <summary><span>What is an all-in-one business platform?</span><i aria-hidden="true"></i></summary>
+        <div class="acc-body"><p>An all-in-one business platform is a single system that handles every digital part of running a business — the website, online bookings, payments, the domain name, and hosting — instead of stitching together separate tools for each. Tablecloth is an all-in-one business platform built for service businesses like salons, restaurants, clinics, and food carts.</p></div>
+      </details>
+
+      <details class="acc-item">
+        <summary><span>How is Tablecloth different from Wix or Squarespace?</span><i aria-hidden="true"></i></summary>
+        <div class="acc-body"><p>Wix and Squarespace are primarily website builders that add booking and payments through paid apps or higher tiers. Tablecloth treats scheduling, payments, staff management, and deployment as core parts of the platform rather than add-ons — so bookings, staff schedules, and your published site all read from the same database, with no syncing and no plugins to maintain.</p></div>
+      </details>
+
+      <details class="acc-item">
+        <summary><span>Can I take appointments and payments on my own domain?</span><i aria-hidden="true"></i></summary>
+        <div class="acc-body"><p>Yes. Tablecloth registers your domain, points it at your site automatically, provisions HTTPS, and serves the booking and checkout flow on your own domain. Customers never get redirected to a third-party booking subdomain, which keeps the experience — and the trust — yours.</p></div>
+      </details>
+
+      <details class="acc-item">
+        <summary><span>Do my staff get their own logins?</span><i aria-hidden="true"></i></summary>
+        <div class="acc-body"><p>Yes. Role-based access is built in. Owners see everything, managers run the schedule and the team, and technicians see only their own appointments. Permissions are enforced on the server, so a role can't be bypassed by poking at the interface, and access can be revoked instantly.</p></div>
+      </details>
+
+      <details class="acc-item">
+        <summary><span>Do I need to know how to code?</span><i aria-hidden="true"></i></summary>
+        <div class="acc-body"><p>No. Business owners edit their site, services, prices, hours, and photos from a visual dashboard, and publishing updates the live site immediately. Developers who want lower-level control get Git-connected deploys and full code access on the same platform — so a business can start simple and grow into custom work without migrating.</p></div>
+      </details>
+
+      <details class="acc-item">
+        <summary><span>What kinds of businesses is Tablecloth built for?</span><i aria-hidden="true"></i></summary>
+        <div class="acc-body"><p>Tablecloth is built for appointment-based and order-based local businesses: nail and hair salons, spas, barbershops, clinics, restaurants, cafés, and food carts. Templates cover service menus with durations and add-ons, food menus with online ordering, and retail catalogs.</p></div>
+      </details>
+
+      <details class="acc-item">
+        <summary><span>Can I move my existing website over?</span><i aria-hidden="true"></i></summary>
+        <div class="acc-body"><p>Yes. Tablecloth can rebuild an existing site on a modern template while keeping your branding, then transfer or re-point your current domain so there's no downtime and no lost search ranking.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CTA ============================= -->
+<section class="cta" id="start">
+  <div class="wrap cta-inner">
+    <h2>Set the table once. Run everything from it.</h2>
+    <p>Get your website, your booking calendar, and your checkout live on your own domain — without wiring six tools together.</p>
+    <div class="cta-actions">
+      <a class="btn btn-cta btn-lg" href="mailto:hello@gettablecloth.com?subject=Tablecloth%20demo">Get started free</a>
+      <a class="btn btn-cta-ghost btn-lg" href="mailto:hello@gettablecloth.com?subject=Tablecloth%20demo">Book a demo</a>
+    </div>
+    <p class="cta-fine">No credit card required to start.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div class="foot-brand">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Tablecloth</span>
+      </a>
+      <p>The all-in-one business platform — website, scheduling, payments, domains, and hosting in one system.</p>
+    </div>
+    <nav class="foot-col" aria-label="Platform">
+      <h4>Platform</h4>
+      <a href="#features">Website &amp; CMS</a>
+      <a href="#features">Scheduling</a>
+      <a href="#features">Payments</a>
+      <a href="#features">Domains</a>
+      <a href="#features">Hosting</a>
+    </nav>
+    <nav class="foot-col" aria-label="Company">
+      <h4>Company</h4>
+      <a href="#compare">Compare</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:hello@gettablecloth.com">Contact</a>
+    </nav>
+  </div>
+  <div class="wrap foot-bottom">
+    <p>&copy; <span id="yr">2026</span> Tablecloth. All rights reserved.</p>
+    <p>Built in Portland, Oregon.</p>
+  </div>
+</footer>
+
+<script src="/app.js" defer></script>
+</body>
+</html>
