@@ -30,7 +30,15 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<!-- Loaded without blocking the first paint: the stylesheet is fetched as
+     "print" (which the browser does not treat as render-blocking) and then
+     switched to "all" once it arrives. Combined with display=swap the page
+     paints immediately in the fallback face and swaps when the webfont is
+     ready, instead of holding the whole page for ~800ms. The <noscript>
+     copy keeps it working with JavaScript disabled. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" /></noscript>
 <link rel="stylesheet" href="/styles.css" />
 
 <script>
@@ -641,12 +649,12 @@
       </p>
     </div>
 
-    <div class="table-scroll">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Comparison table, scrolls horizontally">
       <table class="cmp">
         <caption class="sr-only">Comparison of Tablecloth, do-it-yourself website builders, and hiring a freelancer</caption>
         <thead>
           <tr>
-            <th scope="col">&nbsp;</th>
+            <th scope="col"><span class="sr-only">Feature</span></th>
             <th scope="col" class="cmp-us">Tablecloth</th>
             <th scope="col">DIY builder</th>
             <th scope="col">Freelancer / agency</th>
@@ -823,14 +831,14 @@
       <p>Custom websites for local businesses — with booking, payments, domains, and hosting included and handled.</p>
     </div>
     <nav class="foot-col" aria-label="Explore">
-      <h4>Explore</h4>
+      <p class="foot-h">Explore</p>
       <a href="#included">What's included</a>
       <a href="#dashboard">Your dashboard</a>
       <a href="#process">Process</a>
       <a href="#pricing">Pricing</a>
     </nav>
     <nav class="foot-col" aria-label="Company">
-      <h4>Company</h4>
+      <p class="foot-h">Company</p>
       <a href="#compare">Compare</a>
       <a href="#faq">FAQ</a>
       <a href="mailto:hello@gettablecloth.com">Contact</a>

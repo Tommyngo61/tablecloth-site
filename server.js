@@ -4,6 +4,11 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+// The stylesheet alone is ~39 KB uncompressed. Compressing takes it to
+// roughly a fifth of that, which is the single biggest improvement available
+// to someone loading this page on a phone.
+app.use(require('compression')());
+
 // Static marketing site - no build step. The HTML is the source of truth so
 // crawlers and AI scrapers get the full text without running any JS.
 // There is no build step here, so styles.css / app.js keep the same filename

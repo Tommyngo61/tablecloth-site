@@ -11,7 +11,7 @@
   --surface: #FFFFFF;
   --ink: #17190F;
   --ink-soft: #3B3F35;
-  --muted: #6E7268;
+  --muted: #63665E;
   --line: #E3E3DC;
   --line-soft: #EDEDE6;
 
@@ -21,7 +21,7 @@
   --basil-soft: #E7F1EC;
 
   --clay: #B4543A;
-  --amber: #C08A2E;
+  --amber: #94691F;
   --amber-soft: #F7EEDC;
 
   --display: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -535,7 +535,7 @@ a { color: inherit; }
   linear-gradient(45deg, var(--basil-bright) 25%, transparent 25%, transparent 75%, var(--basil-bright) 75%); }
 .foot-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 44px; padding-bottom: 40px; }
 .foot-brand p { margin: 16px 0 0; font-size: .92rem; max-width: 42ch; }
-.foot-col h4 { color: #fff; font-family: var(--body); font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 16px; }
+.foot-col .foot-h { color: #fff; font-family: var(--body); font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 16px; }
 .foot-col { display: flex; flex-direction: column; gap: 11px; }
 .foot-col a { text-decoration: none; font-size: .93rem; transition: color .15s ease; }
 .foot-col a:hover { color: #fff; }
@@ -680,3 +680,7 @@ a { color: inherit; }
 .bk-done-when { font-size: 1.02rem; font-weight: 600; margin-bottom: 20px; }
 .bk-done-note { color: var(--muted); font-size: .85rem; margin: 12px 0 0; }
 .bk-done .btn { margin-top: 6px; }
+
+/* The comparison table scrolls horizontally, so it is keyboard focusable;
+   without a visible ring a keyboard user cannot tell they've landed on it. */
+.table-scroll:focus-visible { outline: 3px solid var(--basil); outline-offset: 3px; }
